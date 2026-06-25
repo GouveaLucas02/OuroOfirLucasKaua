@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kauã Lucas | Ouro & Prata</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0b0b0b;
+      color: #f5f5f5;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+      border-bottom: 1px solid #222;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: gold;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #ccc;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: gold;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: radial-gradient(circle at center, #1a1a1a, #000);
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      color: gold;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      background: gold;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* SOBRE */
+    .about {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .about img {
+      width: 300px;
+      border-radius: 12px;
+      border: 2px solid gold;
+    }
+
+    .about p {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    /* SERVIÇOS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #141414;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #222;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: gold;
+    }
+
+    .card h3 {
+      color: gold;
+      margin-bottom: 10px;
+    }
+
+    /* DEPOIMENTOS */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .testimonial {
+      background: #141414;
+      padding: 20px;
+      border-left: 3px solid gold;
+      border-radius: 10px;
+      color: #ccc;
+    }
+
+    /* CONTATO */
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, textarea {
+      margin-bottom: 10px;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #1b1b1b;
+      color: white;
+    }
+
+    textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    .whatsapp {
+      display: inline-block;
+      margin-top: 10px;
+      background: #25D366;
+      color: #fff;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #222;
+      color: #777;
+    }
+
+    /* ANIMAÇÕES */
+    .hidden {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Kauã Lucas | Ouro & Prata</div>
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#resultados">Depoimentos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<section class="hero hidden">
+  <div>
+    <h1>Ouro e Prata com Segurança e Confiança</h1>
+    <p>Compra e venda de metais preciosos com avaliação justa e atendimento profissional.</p>
+    <button class="btn" onclick="document.getElementById('contato').scrollIntoView()">Fale Conosco</button>
+  </div>
+</section>
+
+<section id="sobre" class="hidden">
+  <h2 style="color:gold; margin-bottom:20px;">Sobre Mim</h2>
+  <div class="about">
+    <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4437d1" alt="Kauã Lucas">
+    <p>
+      Sou Kauã Lucas, especialista em compra e venda de ouro e prata.
+      Trabalho com transparência, avaliação justa e segurança em cada negociação.
+      Meu objetivo é oferecer confiança e melhores valores do mercado para meus clientes.
+    </p>
+  </div>
+</section>
+
+<section id="servicos" class="hidden">
+  <h2 style="color:gold; margin-bottom:20px;">Serviços</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Compra de Ouro</h3>
+      <p>Compramos ouro com avaliação justa e pagamento imediato.</p>
+    </div>
+    <div class="card">
+      <h3>Venda de Ouro</h3>
+      <p>Ouro e prata certificados com procedência garantida.</p>
+    </div>
+    <div class="card">
+      <h3>Avaliação Gratuita</h3>
+      <p>Analise profissional do seu metal sem compromisso.</p>
+    </div>
+  </div>
+</section>
+
+<section id="resultados" class="hidden">
+  <h2 style="color:gold; margin-bottom:20px;">Depoimentos</h2>
+  <div class="testimonials">
+    <div class="testimonial">"Atendimento rápido e preço justo. Recomendo!" - Carlos M.</div>
+    <div class="testimonial">"Segurança total na venda do meu ouro." - Ana P.</div>
+    <div class="testimonial">"Profissionalismo impecável." - Ricardo S.</div>
+  </div>
+</section>
+
+<section id="contato" class="hidden">
+  <h2 style="color:gold; margin-bottom:20px;">Contato</h2>
+  <div class="contact">
+    <form>
+      <input type="text" placeholder="Seu nome" required>
+      <input type="email" placeholder="Seu email" required>
+      <textarea placeholder="Sua mensagem"></textarea>
+      <button class="btn" type="submit">Enviar</button>
+      <a class="whatsapp" href="https://wa.me/5500000000000" target="_blank">
+        Falar no WhatsApp
+      </a>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2026 Kauã Lucas | Ouro & Prata - Todos os direitos reservados
+</footer>
+
+<script>
+  const elements = document.querySelectorAll('.hidden');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
